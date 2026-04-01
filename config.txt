@@ -1,0 +1,2 @@
+com.walidzaaneun.dao.DaoImpl
+com.walidzaaneun.Metier.MetierImpl
