@@ -5,6 +5,7 @@ import com.walidzaaneun.Metier.MetierImpl;
 import com.walidzaaneun.dao.DaoImpl;
 import com.walidzaaneun.dao.IDao;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
@@ -36,6 +37,12 @@ public class Main {
         ApplicationContext springContext = new ClassPathXmlApplicationContext("config.xml");
         IMetier metier1 = springContext.getBean(IMetier.class);
         System.out.println("calcul = "+metier1.calcul());
+
+
+        // Injection En utilisant le Framework Spring Version annotations
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.walidzaaneun");
+        IMetier metier2 = applicationContext.getBean(IMetier.class);
+        System.out.println("calcul = "+metier2.calcul());
 
 
     }
